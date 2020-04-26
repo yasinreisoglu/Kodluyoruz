@@ -3,7 +3,7 @@ var btn = document.getElementById("sendApi");
 var courseDiv = document.getElementById("leftWorkspace");
 var btnNext = document.getElementById("nextButton");
 var btnBack = document.getElementById("backButton");
-
+var header = document.getElementById("header");
 
 var myUrl = 'https://api.jdoodle.com/v1/execute';
 var proxy = 'https://cors-anywhere.herokuapp.com/';
@@ -40,10 +40,6 @@ btnBack.onclick = () => {
 }
 
 
-
-
-
-
 window.onload = () => {
     getLevels();
 };
@@ -56,6 +52,7 @@ function getLevels() {
         console.log(xhrContent.responseText);
         contentJson = JSON.parse(xhrContent.responseText);
         courseDiv.innerHTML = contentJson.course;
+        header.innerHTML = contentJson.header.toUpperCase();
     };
 
 }
