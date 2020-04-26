@@ -5,6 +5,8 @@ var btnNext = document.getElementById("nextButton");
 var btnBack = document.getElementById("backButton");
 var header = document.getElementById("header");
 
+
+
 var myUrl = 'https://api.jdoodle.com/v1/execute';
 var proxy = 'https://cors-anywhere.herokuapp.com/';
 var contentUrl = "http://demo3878722.mockable.io/level";
