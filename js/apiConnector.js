@@ -51,7 +51,7 @@ function getLevels() {
     xhrContent.onload = () => {
         console.log(xhrContent.responseText);
         contentJson = JSON.parse(xhrContent.responseText);
-        courseDiv.innerHTML = contentJson.course;
+        courseDiv.innerHTML = contentJson.course+contentJson.tutorial;
         header.innerHTML = contentJson.header.toUpperCase();
     };
 
@@ -67,7 +67,8 @@ function compilerApi() {
     xhr.onload = () => {
         responseJson = JSON.parse(xhr.responseText);
         div.innerHTML = responseJson.output;
-        if (responseJson.output.includes(contentJson.answer)) {
+        var lowerRes = responseJson.output.toLowerCase();
+        if (lowerRes.includes(contentJson.answer)) {
             console.log("Done.");
             levelStatus = true;
         } else {
