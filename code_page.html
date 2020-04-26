@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="js/codemirror-5.52.2/lib/codemirror.css">
+    <link href="js/codemirror-5.52.2/theme/darcula.css" rel="stylesheet">
+    
+    <title>Kodlamaya hazırmısın</title>
+    <link rel="stylesheet" href="code_page.css">
+</head>
+
+<body>
+    <!--HEADER-->
+    <div class="header">
+        <div class="left">
+            <div style="padding-top: 5px;padding-left: 20px;">
+                <span style="font-size: 33px;color: whitesmoke;">KODluyoruz</span>
+            </div>
+        </div>
+        <div class="middle" style="text-align: center;">
+            <div style="padding-top: 5px;padding-left: 7%">
+                <span style="font-size: 30px;color: whitesmoke;">BOLUM 1: HELLO FUCKING WORLD</span>
+            </div>    
+        </div>
+        <div class="right"></div>
+    </div>
+    <!--WORKSPACE-->
+    <div class="workspace">
+        <div class="left leftworkspace" id="leftWorkspace"></div>
+        <div class="middle middleworkspace">
+            <div style="height: 100%;">
+                <textarea id="textarea" ></textarea>
+            </div>
+        </div>
+        <div class="right rightworkspace" id="rightWorkspace"></div>
+    </div>
+    <!--FOOTER-->
+    <div class="footer">
+        <div class="left"></div>
+        <div class="middle" style="text-align: center;padding-top: 10;">
+            <div style="float: left;margin-left: 27%;">
+                <button id="backButton" style="width: 50px;height: 30px;">GERİ</button>
+            </div>
+            <div style="float: left;margin-left: 5%;">
+                <button id="sendApi" style="font-size: 20px;width: 150px;height: 30px;">Kodu Çalıştır.</button>
+            </div>
+            <div style="float: left;margin-left: 5%;">
+                <button id="nextButton" style="width: 50px;height: 30px;">ILERI</button>
+            </div>
+        </div>
+        <div class="right"></div>
+    </div>
+
+
+    <script src="js/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/codemirror-5.52.2/lib/codemirror.js" type="text/javascript"></script>
+    <script src="js\codemirror-5.52.2\addon\edit\closebrackets.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/editorController.js" type="text/javascript"></script>
+    <script src="js/apiConnector.js" type="text/javascript"></script>
+</body>
+
+</html>
