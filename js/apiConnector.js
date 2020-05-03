@@ -30,7 +30,7 @@ btnNext.onclick = () => {
     if (levelStatus) {
         currentLevel++;
         getLevels();
-        levelStatus=false;
+        levelStatus = false;
     }
 };
 btnBack.onclick = () => {
@@ -53,7 +53,7 @@ function getLevels() {
     xhrContent.onload = () => {
         console.log(xhrContent.responseText);
         contentJson = JSON.parse(xhrContent.responseText);
-        courseDiv.innerHTML = contentJson.course+contentJson.tutorial;
+        courseDiv.innerHTML = contentJson.course + contentJson.tutorial;
         header.innerHTML = contentJson.header.toUpperCase();
     };
 
