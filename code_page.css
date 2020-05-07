@@ -42,6 +42,7 @@ body {
 
 .leftworkspace {
     background-color: whitesmoke;
+    overflow: scroll;
 }
 
 .middleworkspace {
