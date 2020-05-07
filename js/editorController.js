@@ -3,8 +3,6 @@ var editor = CodeMirror.fromTextArea(textarea, {
     lineNumbers: true,
     theme: "moxer",
     autoCloseBrackets: true,
-    
+
 });
-editor.setSize("100%","100%");
-
-
+editor.setSize("100%", "100%");

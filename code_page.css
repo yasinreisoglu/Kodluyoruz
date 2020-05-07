@@ -66,6 +66,7 @@ body {
 }
 
 .intro {
+    font-size: large;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -73,13 +74,13 @@ body {
 .introBox {
     background-color: #1b1b1b;
     color: white;
-    height: 50px;
     width: 90%;
     margin: auto;
     text-align: center;
     vertical-align: middle;
     line-height: 50px;
     font-size: larger;
+    display: inline-block
 }
 
 .introHead {
