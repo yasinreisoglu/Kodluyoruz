@@ -15,7 +15,7 @@ const xhr = new XMLHttpRequest();
 
 
 
-let currentLevel = 1;
+let currentLevel = 2;
 var responseJson;
 var contentJson;
 var value;
@@ -31,13 +31,14 @@ btnNext.onclick = () => {
         currentLevel++;
         getLevels();
         levelStatus = false;
+        clearPage();
     }
 };
 btnBack.onclick = () => {
     if (currentLevel > 1) {
         currentLevel--;
         getLevels();
-
+        clearPage();
     }
 }
 
@@ -54,8 +55,14 @@ function getLevels() {
         contentJson = JSON.parse(xhrContent.responseText);
         courseDiv.innerHTML = contentJson.course + contentJson.tutorial;
         header.innerHTML = contentJson.header.toUpperCase();
+        editor.setValue(contentJson.precode);
     };
 
+}
+
+function clearPage() {
+    courseDiv.innerHTML = "";
+    div.innerHTML = "";
 }
 
 //Compiler apisi için gereken POST işlemleri.
