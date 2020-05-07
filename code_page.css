@@ -1,20 +1,23 @@
-body{
+body {
     background-color: black;
     margin: 0;
 }
-.header{
+
+.header {
     width: 100%;
     height: 50px;
     top: 0;
-    background-color:rgb(34, 34, 34);
+    background-color: rgb(34, 34, 34);
 }
-.left{
+
+.left {
     width: 34%;
     height: 100%;
     left: 0%;
     float: left;
 }
-.middle{
+
+.middle {
     width: 34%;
     height: 100%;
     left: 34%;
@@ -22,35 +25,65 @@ body{
     float: left;
     overflow: hidden;
 }
-.right{
+
+.right {
     width: 32%;
     height: 100%;
     right: 0%;
     float: right;
 }
-.workspace{
+
+.workspace {
     top: 50px;
     bottom: 50px;
     height: 90%;
     width: 100%;
 }
-.leftworkspace{
+
+.leftworkspace {
     background-color: whitesmoke;
 }
-.middleworkspace{
-    background-color:rgb(49, 51, 53);
+
+.middleworkspace {
+    background-color: rgb(49, 51, 53);
 }
-.rightworkspace{
+
+.rightworkspace {
     background-color: black;
     color: white;
 }
-.footer{
+
+.footer {
     position: fixed;
     width: 100%;
     height: 50px;
     bottom: 0;
-    background-color:rgb(34, 34, 34);
+    background-color: rgb(34, 34, 34);
 }
-.CodeMirror{
+
+.CodeMirror {
     font-size: 16px;
+}
+
+.intro {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.introBox {
+    background-color: #1b1b1b;
+    color: white;
+    height: 50px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: larger;
+}
+
+.introHead {
+    padding-left: 10px;
+    background-color: #e3e3e3;
+    height: 35px;
 }
