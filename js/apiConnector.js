@@ -1,28 +1,31 @@
+//Elementler
 var div = document.getElementById("rightWorkspace");
-var btn = document.getElementById("sendApi");
+var btnRun = document.getElementById("sendApi");
 var courseDiv = document.getElementById("leftWorkspace");
 var btnNext = document.getElementById("nextButton");
 var btnBack = document.getElementById("backButton");
 var header = document.getElementById("header");
 
 
-
+//API'ler için Url'ler 
 var myUrl = 'https://api.jdoodle.com/v1/execute';
 var proxy = 'https://cors-anywhere.herokuapp.com/';
 var contentUrl = "http://demo3878722.mockable.io/level";
+
+//API nesneleri
 const xhrContent = new XMLHttpRequest();
 const xhr = new XMLHttpRequest();
 
 
-
-let currentLevel = 2;
+//Variables
+let currentLevel = 1;
 var responseJson;
 var contentJson;
 var value;
 var levelStatus = false;
 
 
-btn.onclick = () => {
+btnRun.onclick = () => {
     compilerApi();
 };
 
@@ -47,7 +50,7 @@ window.onload = () => {
     getLevels();
 };
 
-
+//Tutorialler için gereken verileri çeken API işlemleri
 function getLevels() {
     xhrContent.open('GET', contentUrl + currentLevel, true);
     xhrContent.send();
@@ -59,7 +62,7 @@ function getLevels() {
     };
 
 }
-
+//level geçildiğinde sayfa contentlerini temizleyen function
 function clearPage() {
     courseDiv.innerHTML = "";
     div.innerHTML = "";
