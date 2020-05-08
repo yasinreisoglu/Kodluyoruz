@@ -15,7 +15,7 @@ const xhr = new XMLHttpRequest();
 
 
 
-let currentLevel = 2;
+let currentLevel = 1;
 var responseJson;
 var contentJson;
 var value;
@@ -54,7 +54,7 @@ function getLevels() {
     xhrContent.onload = () => {
         contentJson = JSON.parse(xhrContent.responseText);
         courseDiv.innerHTML = contentJson.course + contentJson.tutorial;
-        header.innerHTML = contentJson.header.toUpperCase();
+        header.innerHTML = contentJson.header;
         editor.setValue(contentJson.precode);
     };
 
