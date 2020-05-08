@@ -1,14 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
     background-color: black;
     margin: 0;
 }
 
+/* Header */
 .header {
     width: 100%;
     height: 50px;
     top: 0;
     background-color: rgb(34, 34, 34);
+    overflow: hidden;
 }
+
+.header_baslik {
+    font-family: 'Roboto', sans-serif;
+    background-color: #105c48c9;
+    width: max-content;
+    border-radius: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+/* ---------- */
+
 
 .left {
     width: 34%;
@@ -19,7 +34,6 @@ body {
 
 .middle {
     width: 34%;
-    height: 100%;
     left: 34%;
     right: 32%;
     float: left;
@@ -33,6 +47,8 @@ body {
     float: right;
 }
 
+/* CodeSpace */
+
 .workspace {
     top: 50px;
     bottom: 50px;
@@ -42,18 +58,35 @@ body {
 
 .leftworkspace {
     background-color: whitesmoke;
+    overflow: scroll;
+}
+.bilgialanı {
+    background-color: #105c48;
+    height: 4vh;
+    color: #f1f1f1;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .middleworkspace {
     background-color: rgb(49, 51, 53);
+    overflow: hidden;
 }
 
 .rightworkspace {
     background-color: black;
     color: white;
 }
+/* ---------------- */
 
+
+/* Footer */
 .footer {
+    overflow: hidden;
     position: fixed;
     width: 100%;
     height: 50px;
@@ -61,14 +94,38 @@ body {
     background-color: rgb(34, 34, 34);
 }
 
+.footerbutton{
+    width: 50px;
+    height: 30px;
+    background-color: #105c48c9;
+    border: none;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border-radius: 4px;
+
+    transition-duration: 0.4s;
+}
+.footerbutton:hover {
+    background-color: whitesmoke;
+    color: #0d4b3a;
+}
+/* -------------------------- */
+
+/* CodeMirror*/
 .CodeMirror {
     font-size: 16px;
+    position: static;
 }
+/* ------------------------ */
 
+/* Tutorial (API'den gelenler) */
 .intro {
     font-size: large;
     padding-left: 10px;
     padding-right: 10px;
+    color: #1b1b1b;
 }
 
 .introBox {
@@ -84,7 +141,9 @@ body {
 }
 
 .introHead {
-    padding-left: 10px;
-    background-color: #e3e3e3;
-    height: 35px;
+    text-shadow: 0.3px 0.3px #105c48c9;
+    color: #105c48c9;
+    font-weight: bold;
+    text-decoration: underline;
 }
+/* ------------------- */
