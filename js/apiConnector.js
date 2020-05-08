@@ -18,7 +18,7 @@ const xhr = new XMLHttpRequest();
 
 
 //Variables
-let currentLevel = 1;
+let currentLevel = 2;
 var responseJson;
 var contentJson;
 var value;
@@ -28,7 +28,6 @@ var levelStatus = false;
 btnRun.onclick = () => {
     compilerApi();
 };
-btnNext.style = ""
 btnNext.onclick = () => {
     if (levelStatus) {
         currentLevel++;
@@ -66,6 +65,7 @@ function getLevels() {
 function clearPage() {
     courseDiv.innerHTML = "";
     div.innerHTML = "";
+    editor.setValue("");
 }
 
 //Compiler apisi için gereken POST işlemleri.
@@ -86,7 +86,8 @@ function compilerApi() {
         responseJson = JSON.parse(xhr.responseText);
         div.innerHTML = responseJson.output;
         var lowerRes = responseJson.output.toLowerCase();
-        if (value.includes(contentJson.code)) {
+        var lowerAns = contentJson.answer.toLowerCase();
+        if (lowerRes == lowerAns) {
             console.log("Done.");
             levelStatus = true;
         } else {
