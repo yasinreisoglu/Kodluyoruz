@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 body {
     background-color: black;
     margin: 0;
 }
+
 
 .header {
     width: 100%;
@@ -10,6 +13,7 @@ body {
     background-color: rgb(34, 34, 34);
 }
 
+/* CodeSpace */
 .left {
     width: 34%;
     height: 100%;
@@ -47,12 +51,14 @@ body {
 
 .middleworkspace {
     background-color: rgb(49, 51, 53);
+    overflow: hidden;
 }
 
 .rightworkspace {
     background-color: black;
     color: white;
 }
+/* ---------------- */
 
 .footer {
     position: fixed;
@@ -62,6 +68,26 @@ body {
     background-color: rgb(34, 34, 34);
 }
 
+.footerbutton{
+    width: 50px;
+    height: 30px;
+    background-color: #105c48c9;
+    border: none;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    border-radius: 4px;
+
+    transition-duration: 0.4s;
+}
+.footerbutton:hover {
+    background-color: whitesmoke;
+    color: #0d4b3a;
+}
+
+
+/* CodeMirror*/
 .CodeMirror {
     font-size: 16px;
 }
@@ -89,3 +115,4 @@ body {
     background-color: #e3e3e3;
     height: 35px;
 }
+/* ------------------- */
