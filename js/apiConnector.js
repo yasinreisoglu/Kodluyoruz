@@ -28,7 +28,7 @@ var levelStatus = false;
 btnRun.onclick = () => {
     compilerApi();
 };
-
+btnNext.style = ""
 btnNext.onclick = () => {
     if (levelStatus) {
         currentLevel++;
