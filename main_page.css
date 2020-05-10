@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+    background-image: url(images/D00d.gif);
+    /*-moz-background-size: cover;
+    -webkit-background-size: cover;*/
+    background-position: center;
+    background-size: 1920px 1080px;
+    background-repeat: no-repeat,repeat;
+    /*background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;*/
+    margin: 0;
+}
