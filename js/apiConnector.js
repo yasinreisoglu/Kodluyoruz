@@ -16,9 +16,8 @@ var contentUrl = "http://demo3878722.mockable.io/level";
 const xhrContent = new XMLHttpRequest();
 const xhr = new XMLHttpRequest();
 
-
 //Variables
-let currentLevel = 2;
+let currentLevel = 3;
 var responseJson;
 var contentJson;
 var value;
@@ -84,7 +83,11 @@ function compilerApi() {
     xhr.send(data);
     xhr.onload = () => {
         responseJson = JSON.parse(xhr.responseText);
+        if (responseJson.output.includes("<")) {
+            responseJson.output = responseJson.output.replace(/[<,>]/g, "");
+        }
         div.innerHTML = responseJson.output;
+
         var lowerRes = responseJson.output.toLowerCase();
         var lowerAns = contentJson.answer.toLowerCase();
         if (lowerRes == lowerAns) {
