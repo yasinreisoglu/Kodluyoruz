@@ -17,7 +17,7 @@ const xhrContent = new XMLHttpRequest();
 const xhr = new XMLHttpRequest();
 
 //Variables
-let currentLevel = 3;
+let currentLevel = 4;
 var responseJson;
 var contentJson;
 var value;
