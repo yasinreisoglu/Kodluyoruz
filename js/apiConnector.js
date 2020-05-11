@@ -17,7 +17,7 @@ const xhrContent = new XMLHttpRequest();
 const xhr = new XMLHttpRequest();
 
 //Variables
-let currentLevel = 4;
+let currentLevel = 1;
 var responseJson;
 var contentJson;
 var value;
@@ -33,6 +33,9 @@ btnNext.onclick = () => {
         getLevels();
         levelStatus = false;
         clearPage();
+        if (!levelStatus) {
+            btnNext.classList.add('bdisabled');
+        }
     }
 };
 btnBack.onclick = () => {
@@ -46,6 +49,9 @@ btnBack.onclick = () => {
 
 window.onload = () => {
     getLevels();
+    if (!levelStatus) {
+        btnNext.classList.add('bdisabled');
+    }
 };
 
 //Tutorialler için gereken verileri çeken API işlemleri
@@ -58,6 +64,11 @@ function getLevels() {
         header.innerHTML = contentJson.header.toUpperCase();
         editor.setValue(contentJson.precode);
     };
+    if (currentLevel <= 1) {
+        btnBack.classList.add('bdisabled');
+    } else {
+        btnBack.classList.remove('bdisabled');
+    }
 
 }
 //level geçildiğinde sayfa contentlerini temizleyen function
@@ -93,6 +104,7 @@ function compilerApi() {
         if (lowerRes == lowerAns) {
             console.log("Done.");
             levelStatus = true;
+            btnNext.classList.remove('bdisabled');
         } else {
             console.log("Error");
         }
