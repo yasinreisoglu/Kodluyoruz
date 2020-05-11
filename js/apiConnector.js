@@ -33,6 +33,9 @@ btnNext.onclick = () => {
         getLevels();
         levelStatus = false;
         clearPage();
+        if (!levelStatus) {
+            btnNext.classList.add('bdisabled');
+        }
     }
 };
 btnBack.onclick = () => {
@@ -58,6 +61,11 @@ function getLevels() {
         header.innerHTML = contentJson.header.toUpperCase();
         editor.setValue(contentJson.precode);
     };
+    if (currentLevel <= 1) {
+        btnBack.classList.add('bdisabled');
+    } else {
+        btnBack.classList.remove('bdisabled');
+    }
 
 }
 //level geçildiğinde sayfa contentlerini temizleyen function
@@ -93,6 +101,7 @@ function compilerApi() {
         if (lowerRes == lowerAns) {
             console.log("Done.");
             levelStatus = true;
+            btnNext.classList.remove('bdisabled');
         } else {
             console.log("Error");
         }
