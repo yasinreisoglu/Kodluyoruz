@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-    background-color: black;
+    background-color: #1f0e07;
     background-image: url(images/);
     /*-moz-background-size: cover;
     -webkit-background-size: cover;*/
@@ -44,8 +44,14 @@ img{
     width: 150px;
     height: 150px;
     transition-duration: 0.5s;
+    opacity: 1;
 }
-.kutu:hover{background-color: #105c48c9;border-radius: 15px;}
+.kutu:hover{
+    background-color: #105c48c9;
+    border-radius: 15px;
+    opacity: 0.7;
+    box-shadow: 5px 5px 5px 5px #000000;
+}
 .kutumesafe{margin-left: 15%;}
 .pythonbutton{
 
@@ -63,4 +69,5 @@ img{
     font-size: 2vw;
     font-family: 'Roboto',sans-serif;
     padding: 5;
+    text-shadow: 1.5px 1.5px 1.5px black;
 }
