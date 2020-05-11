@@ -17,7 +17,7 @@ const xhrContent = new XMLHttpRequest();
 const xhr = new XMLHttpRequest();
 
 //Variables
-let currentLevel = 4;
+let currentLevel = 1;
 var responseJson;
 var contentJson;
 var value;
@@ -49,6 +49,9 @@ btnBack.onclick = () => {
 
 window.onload = () => {
     getLevels();
+    if (!levelStatus) {
+        btnNext.classList.add('bdisabled');
+    }
 };
 
 //Tutorialler için gereken verileri çeken API işlemleri
