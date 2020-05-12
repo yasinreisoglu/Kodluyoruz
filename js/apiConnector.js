@@ -8,13 +8,13 @@ var header = document.getElementById("header");
 
 
 //API'ler için Url'ler 
-var myUrl = 'https://api.jdoodle.com/v1/execute';
+var compilerAPI = 'https://api.jdoodle.com/v1/execute';
 var proxy = 'https://cors-anywhere.herokuapp.com/';
-var contentUrl = "http://demo3878722.mockable.io/level";
-
+var contentUrl = "http://demo3878722.mockable.io/";
 //API nesneleri
 const xhrContent = new XMLHttpRequest();
 const xhr = new XMLHttpRequest();
+
 
 //Variables
 let currentLevel = 1;
@@ -22,6 +22,7 @@ var responseJson;
 var contentJson;
 var value;
 var levelStatus = false;
+var selectedLanguage = localStorage.getItem("selectedLanguage");
 
 
 btnRun.onclick = () => {
@@ -46,7 +47,6 @@ btnBack.onclick = () => {
     }
 }
 
-
 window.onload = () => {
     getLevels();
     if (!levelStatus) {
@@ -56,7 +56,7 @@ window.onload = () => {
 
 //Tutorialler için gereken verileri çeken API işlemleri
 function getLevels() {
-    xhrContent.open('GET', contentUrl + currentLevel, true);
+    xhrContent.open('GET', contentUrl + selectedLanguage + "/level" + currentLevel, true);
     xhrContent.send();
     xhrContent.onload = () => {
         contentJson = JSON.parse(xhrContent.responseText);
@@ -80,7 +80,7 @@ function clearPage() {
 
 //Compiler apisi için gereken POST işlemleri.
 function compilerApi() {
-    xhr.open('POST', proxy + myUrl, true);
+    xhr.open('POST', proxy + compilerAPI, true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     value = editor.getValue();
