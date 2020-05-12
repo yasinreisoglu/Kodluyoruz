@@ -36,8 +36,8 @@ img{
 .logo{
     width: 1200px;
     height: 325px;
-    border: solid 5px #105c4894;
-    border-radius: 15px;
+    border-bottom: solid 5px rgba(255, 255, 255, 0.719);
+    border-radius: 5px;
 }
 .ortabolge{
     height: 90%;
@@ -68,7 +68,7 @@ img{
 }
 .kutumesafe{margin-left: 15%;}
 .dilsecin{
-    color: #105c48c9;
+    color: whitesmoke;
     text-align: center;
     width: fit-content;
     font-size: 2vw;
