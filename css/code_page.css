@@ -14,7 +14,10 @@ body {
     background-color: rgb(34, 34, 34);
     overflow: hidden;
 }
-
+.logo{
+    width: 180px;
+    height: 45px;
+}
 .header_baslik {
     font-family: 'Roboto', sans-serif;
     background-color: #105c48c9;

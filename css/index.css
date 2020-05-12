@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-    background-color: #1f0e07;
-    background-image: url(images/);
+    background-color: rgb(49, 51, 53);
+    background-image: url("/images/giphy.gif");
     /*-moz-background-size: cover;
     -webkit-background-size: cover;*/
     background-position: center;
-    background-size: 1920px 1080px;
-    background-repeat: no-repeat,repeat;
+    /*background-size: 1920px 1080px;*/
+    /*background-repeat: no-repeat,repeat;*/
     /*background-position: top center !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed;*/
