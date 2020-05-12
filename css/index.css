@@ -68,10 +68,10 @@ img {
 }
 
 .kutu:hover {
-    
     border-radius: 15px;
     opacity: 1;
-    box-shadow: 5px 5px 5px 5px #000000;
+    cursor: pointer;
+    box-shadow: 0 0 11px rgba(33, 33, 33, .2);
 }
 
 .kutumesafe {
