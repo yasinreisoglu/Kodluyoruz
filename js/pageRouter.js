@@ -1,6 +1,11 @@
 var btnPython = document.getElementById('btnPython');
 var btnC = document.getElementById('btnC');
 var btnJava = document.getElementById('btnJava');
+var imgJava = document.getElementById('imgJava');
+var imgPython = document.getElementById('imgPython');
+var imgC = document.getElementById('imgC');
+
+
 
 
 btnPython.onclick = () => {
@@ -13,6 +18,41 @@ btnC.onclick = () => {
     localStorage.setItem("selectedLanguage", "c");
 }
 
+function setColorized(lang) {
+    switch (lang) {
+        case 'Python':
+            imgPython.src = "images/iconlar/python-color.png";
+            break;
+        case 'C':
+            imgC.src = "images/iconlar/C-color.png";
+            break;
+        case 'Java':
+            imgJava.src = "images/iconlar/java-color.png";
+            break;
+    }
+}
+
+function setWhite(lang) {
+    switch (lang) {
+        case 'Python':
+            imgPython.src = "images/iconlar/python-2.png";
+            break;
+        case 'C':
+            imgC.src = "images/iconlar/C-2.png";
+            break;
+        case 'Java':
+            imgJava.src = "images/iconlar/java-2.png";
+            break;
+    }
+}
+
+function setPythonColorized() {
+    imgJava.src = "images/iconlar/test.png";
+}
+
+function setPythonJavaWhite() {
+    imgJava.src = "images/iconlar/test.png";
+}
 btnJava.onclick = () => {
     window.location.href = 'code_page.html';
     localStorage.setItem("selectedLanguage", "java");
