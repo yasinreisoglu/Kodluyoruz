@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 body {
     background-color: black;
     margin: 0;
 }
 
+
 /* Header */
+
 .header {
     width: 100%;
     height: 50px;
@@ -23,8 +24,9 @@ body {
     padding-right: 7px;
     margin-top: 5px;
 }
-/* ---------- */
 
+
+/* ---------- */
 
 .left {
     width: 34%;
@@ -48,6 +50,7 @@ body {
     float: right;
 }
 
+
 /* CodeSpace */
 
 .workspace {
@@ -61,6 +64,7 @@ body {
     background-color: whitesmoke;
     overflow-y: scroll;
 }
+
 .bilgialanı {
     background-color: #105c48;
     height: 4vh;
@@ -82,10 +86,13 @@ body {
     background-color: black;
     color: white;
 }
+
+
 /* ---------------- */
 
 
 /* Footer */
+
 .footer {
     overflow: hidden;
     position: fixed;
@@ -95,7 +102,7 @@ body {
     background-color: rgb(34, 34, 34);
 }
 
-.footerbutton{
+.footerbutton {
     width: 50px;
     height: 30px;
     background-color: #105c48c9;
@@ -108,24 +115,34 @@ body {
     opacity: 1;
     transition-duration: 0.4s;
 }
+
 .footerbutton:hover {
     background-color: whitesmoke;
     color: #0d4b3a;
 }
-.bdisabled{
+
+.bdisabled {
     pointer-events: none;
     opacity: 0.5;
 }
+
+
 /* -------------------------- */
 
+
 /* CodeMirror*/
+
 .CodeMirror {
     font-size: 16px;
     position: static;
 }
+
+
 /* ------------------------ */
 
+
 /* Tutorial (API'den gelenler) */
+
 .intro {
     font-size: large;
     padding-left: 10px;
@@ -138,7 +155,7 @@ body {
     color: white;
     width: 90%;
     margin: auto;
-    text-align: center;
+    padding-left: 10px;
     vertical-align: middle;
     line-height: 50px;
     font-size: larger;
@@ -151,4 +168,6 @@ body {
     font-weight: bold;
     text-decoration: underline;
 }
+
+
 /* ------------------- */
