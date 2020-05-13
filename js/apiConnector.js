@@ -5,8 +5,8 @@ var courseDiv = document.getElementById("leftWorkspace");
 var btnNext = document.getElementById("nextButton");
 var btnBack = document.getElementById("backButton");
 var header = document.getElementById("header");
-var btnHint = document.getElementById("hintbutton")
-
+var btnHint = document.getElementById("hintbutton");
+var logo = document.getElementById("logo");
 //API'ler için Url'ler 
 var compilerAPI = 'https://api.jdoodle.com/v1/execute';
 var proxy = 'https://cors-anywhere.herokuapp.com/';
@@ -56,6 +56,19 @@ window.onload = () => {
     getLevels();
     if (!levelStatus) {
         btnNext.classList.add('bdisabled');
+    }
+    switch (selectedLanguage) {
+        case "python":
+            logo.src = "images/Logo/Kodluyoruz-Logo-Python.png"
+            break;
+        case "java":
+            logo.src = "images/Logo/Kodluyoruz-Logo-Java.png"
+
+            break;
+        case "c":
+            logo.src = "images/Logo/Kodluyoruz-Logo-C.png"
+
+            break;
     }
 };
 

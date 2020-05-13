@@ -18,11 +18,18 @@ btnC.onclick = () => {
     localStorage.setItem("selectedLanguage", "c");
 }
 
+btnJava.onclick = () => {
+    window.location.href = 'code_page.html';
+    localStorage.setItem("selectedLanguage", "java");
+}
+
 function setColorized(lang) {
     switch (lang) {
         case 'Python':
             imgPython.src = "images/iconlar/python-color.png";
+            imgPython.style.transitionDelay = "0.8s";
             logo.src = "images/Logo/Kodluyoruz-Logo-Python.png";
+            logo.style.transitionDelay = "1s";
             break;
         case 'C':
             imgC.src = "images/iconlar/C-color.png";
@@ -42,6 +49,8 @@ function setWhite(lang) {
         case 'Python':
             imgPython.src = "images/iconlar/python-2.png";
             logo.src = "images/Logo/Kodluyoruz-Logo-2.png";
+            logo.style.transitionDelay = "1s";
+
             break;
         case 'C':
             imgC.src = "images/iconlar/C-2.png";
@@ -62,8 +71,4 @@ function setPythonColorized() {
 
 function setPythonJavaWhite() {
     imgJava.src = "images/iconlar/test.png";
-}
-btnJava.onclick = () => {
-    window.location.href = 'code_page.html';
-    localStorage.setItem("selectedLanguage", "java");
 }
