@@ -5,7 +5,7 @@ var courseDiv = document.getElementById("leftWorkspace");
 var btnNext = document.getElementById("nextButton");
 var btnBack = document.getElementById("backButton");
 var header = document.getElementById("header");
-
+var btnHint = document.getElementById("hintbutton")
 
 //API'ler için Url'ler 
 var compilerAPI = 'https://api.jdoodle.com/v1/execute';
@@ -17,7 +17,8 @@ const xhr = new XMLHttpRequest();
 
 
 //Variables
-let currentLevel = 9;
+let currentLevel = 1;
+let hintCounter = 0;
 var responseJson;
 var contentJson;
 var value;
@@ -25,8 +26,10 @@ var levelStatus = false;
 var selectedLanguage = localStorage.getItem("selectedLanguage");
 
 
+
 btnRun.onclick = () => {
     compilerApi();
+
 };
 btnNext.onclick = () => {
     if (levelStatus) {
@@ -46,7 +49,9 @@ btnBack.onclick = () => {
         clearPage();
     }
 }
-
+btnHint.onclick = () => {
+    editor.setValue(contentJson.code);
+}
 window.onload = () => {
     getLevels();
     if (!levelStatus) {
@@ -76,6 +81,8 @@ function clearPage() {
     courseDiv.innerHTML = "";
     div.innerHTML = "";
     editor.setValue("");
+    hintCounter = 0;
+    btnHint.style.visibility = "hidden";
 }
 
 //Compiler apisi için gereken POST işlemleri.
@@ -107,6 +114,10 @@ function compilerApi() {
             btnNext.classList.remove('bdisabled');
         } else {
             console.log("Error");
+            hintCounter++;
+            if (hintCounter > 1) {
+                btnHint.style.visibility = "visible";
+            }
         }
     }
 }

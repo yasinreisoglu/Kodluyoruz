@@ -1,8 +1,8 @@
 var editor = CodeMirror.fromTextArea(textarea, {
     mode: 'python',
     lineNumbers: true,
-    theme: "moxer ",
+    theme: "tomorrow-night-bright",
     autoCloseBrackets: true,
 
 });
-editor.setSize("100%", "100%");
+editor.setSize("100%", "100%")
