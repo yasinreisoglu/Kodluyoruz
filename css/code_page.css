@@ -98,6 +98,7 @@ body {
     margin-bottom: 5px;
     border: none;
     transition-duration: 0.4s;
+    margin-left: 35px;
 }
 
 .hintbutton:focus {
