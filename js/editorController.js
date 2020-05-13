@@ -1,7 +1,7 @@
 var editor = CodeMirror.fromTextArea(textarea, {
-    mode: 'javascript',
+    mode: 'python',
     lineNumbers: true,
-    theme: "moxer",
+    theme: "moxer ",
     autoCloseBrackets: true,
 
 });
