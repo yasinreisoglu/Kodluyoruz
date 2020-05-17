@@ -10,14 +10,16 @@ var logo = document.getElementById("logo");
 //API'ler için Url'ler 
 var compilerAPI = 'https://api.jdoodle.com/v1/execute';
 var proxy = 'https://cors-anywhere.herokuapp.com/';
-var contentUrl = "http://demo3878722.mockable.io/";
+const contentApi = "http://demo3878722.mockable.io/"
+
+
 //API nesneleri
 const xhrContent = new XMLHttpRequest();
 const xhr = new XMLHttpRequest();
 
 
 //Variables
-let currentLevel = 1;
+let currentLevel = 0;
 let hintCounter = 0;
 var responseJson;
 var contentJson;
@@ -43,14 +45,14 @@ btnNext.onclick = () => {
     }
 };
 btnBack.onclick = () => {
-    if (currentLevel > 1) {
+    if (currentLevel > 0) {
         currentLevel--;
         getLevels();
         clearPage();
     }
 }
 btnHint.onclick = () => {
-    editor.setValue(contentJson.code);
+    editor.setValue(contentJson.levels.level[currentLevel].code);
 }
 window.onload = () => {
     getLevels();
@@ -74,15 +76,15 @@ window.onload = () => {
 
 //Tutorialler için gereken verileri çeken API işlemleri
 function getLevels() {
-    xhrContent.open('GET', contentUrl + selectedLanguage + "/level" + currentLevel, true);
+    xhrContent.open('GET', contentApi + selectedLanguage, true);
     xhrContent.send();
     xhrContent.onload = () => {
         contentJson = JSON.parse(xhrContent.responseText);
-        courseDiv.innerHTML = contentJson.course + contentJson.tutorial;
-        header.innerHTML = contentJson.header.toUpperCase();
-        editor.setValue(contentJson.precode);
+        header.innerHTML = contentJson.levels.level[currentLevel].header;
+        courseDiv.innerHTML = contentJson.levels.level[currentLevel].course + contentJson.levels.level[currentLevel].tutorial;
+        editor.setValue(contentJson.levels.level[currentLevel].precode);
     };
-    if (currentLevel <= 1) {
+    if (currentLevel <= 0) {
         btnBack.classList.add('bdisabled');
     } else {
         btnBack.classList.remove('bdisabled');
@@ -120,7 +122,7 @@ function compilerApi() {
         div.innerHTML = responseJson.output;
 
         var lowerRes = responseJson.output.toLowerCase();
-        var lowerAns = contentJson.answer.toLowerCase();
+        var lowerAns = contentJson.levels.level[currentLevel].answer.toLowerCase();
         if (lowerRes == lowerAns) {
             console.log("Done.");
             levelStatus = true;

@@ -26,8 +26,8 @@ btnJava.onclick = () => {
 function setColorized(lang) {
     switch (lang) {
         case 'Python':
-            imgPython.src = "images/iconlar/python-color.png";
             imgPython.style.transitionDelay = "0.8s";
+            imgPython.src = "images/iconlar/python-color.png";
             logo.src = "images/Logo/Kodluyoruz-Logo-Python.png";
             logo.style.transitionDelay = "1s";
             break;
