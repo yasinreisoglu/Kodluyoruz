@@ -1,23 +1,23 @@
 //Elementler
-var div = document.getElementById("rightWorkspace");
-var btnRun = document.getElementById("sendApi");
-var courseDiv = document.getElementById("leftWorkspace");
-var btnNext = document.getElementById("nextButton");
-var btnBack = document.getElementById("backButton");
-var header = document.getElementById("header");
-var btnHint = document.getElementById("hintbutton");
-var logo = document.getElementById("logo");
-var bilgialanı = document.getElementById("bilgialanı");
-var hintpopup = document.getElementById("hintpopup");
-var btnHintOk = document.getElementById("hint-al");
-var btnHintCancel = document.getElementById("hint-alma");
+const div = document.getElementById("rightWorkspace");
+const btnRun = document.getElementById("sendApi");
+const courseDiv = document.getElementById("leftWorkspace");
+const btnNext = document.getElementById("nextButton");
+const btnBack = document.getElementById("backButton");
+const header = document.getElementById("header");
+const btnHint = document.getElementById("hintbutton");
+const logo = document.getElementById("logo");
+const bilgialanı = document.getElementById("bilgialanı");
+const hintpopup = document.getElementById("hintpopup");
+const btnHintOk = document.getElementById("hint-al");
+const btnHintCancel = document.getElementById("hint-alma");
 
 
 
 //API'ler için Url'ler 
-var compilerAPI = 'https://api.jdoodle.com/v1/execute';
-var proxy = 'https://cors-anywhere.herokuapp.com/';
-const contentApi = "http://demo3878722.mockable.io/"
+const compilerAPI = 'https://api.jdoodle.com/v1/execute';
+const proxy = 'https://cors-anywhere.herokuapp.com/';
+const contentAPI = "http://demo3878722.mockable.io/"
 
 
 //API nesneleri
@@ -68,6 +68,7 @@ btnBack.onclick = () => {
 }
 btnHintOk.onclick = () => {
     editor.setValue(contentJson.levels.level[currentLevel].code);
+    compilerApi();
     btnHint.style.visibility = "hidden";
     hintpopup.style.display = "none";
 }
@@ -110,7 +111,7 @@ window.onclick = function(event) {
 
 //Tutorialler için gereken verileri çeken API işlemleri
 function getLevels() {
-    xhrContent.open('GET', contentApi + selectedLanguage, true);
+    xhrContent.open('GET', contentAPI + selectedLanguage, true);
     xhrContent.send();
     xhrContent.onload = () => {
         contentJson = JSON.parse(xhrContent.responseText);
