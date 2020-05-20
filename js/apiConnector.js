@@ -7,6 +7,7 @@ var btnBack = document.getElementById("backButton");
 var header = document.getElementById("header");
 var btnHint = document.getElementById("hintbutton");
 var logo = document.getElementById("logo");
+var bilgialanı = document.getElementById("bilgialanı");
 //API'ler için Url'ler 
 var compilerAPI = 'https://api.jdoodle.com/v1/execute';
 var proxy = 'https://cors-anywhere.herokuapp.com/';
@@ -34,15 +35,23 @@ btnRun.onclick = () => {
 
 };
 btnNext.onclick = () => {
-    if (levelStatus) {
-        currentLevel++;
-        getLevels();
-        levelStatus = false;
-        clearPage();
-        if (!levelStatus) {
-            btnNext.classList.add('bdisabled');
+    if (currentLevel + 1 < contentJson.levels.level.length) {
+        if (levelStatus) {
+            currentLevel++;
+            getLevels();
+            levelStatus = false;
+            clearPage();
+            if (!levelStatus) {
+                btnNext.classList.add('bdisabled');
+            }
         }
+    } else {
+        bilgialanı.style.display = "none";
+        clearPage();
+        header.innerHTML = "TEBRİKLER";
+        editor.setValue("Bütün python kurslarını başarıyla tamamladınız!!!");
     }
+
 };
 btnBack.onclick = () => {
     if (currentLevel > 0) {
@@ -93,6 +102,7 @@ function getLevels() {
 }
 //level geçildiğinde sayfa contentlerini temizleyen function
 function clearPage() {
+    header.innerHTML = "";
     courseDiv.innerHTML = "";
     div.innerHTML = "";
     editor.setValue("");
