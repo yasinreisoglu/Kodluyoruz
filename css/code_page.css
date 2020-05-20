@@ -87,7 +87,7 @@ body {
 
 .hintbutton {
     cursor: pointer;
-    visibility: hidden;
+    visibility: visible;
     color: white;
     background-color: #105c48;
     align-self: flex-end;
@@ -110,6 +110,35 @@ body {
     color: #0d4b3a;
     border: solid 1px #0d4b3a;
 }
+.hintpopup {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); 
+}
+.hint-content{
+    display: grid;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid black;
+    width: 20%;
+    height: 30%; 
+    background-color: white;
+    border-radius: 15px;
+}
+.hint-al{
+    height: 50px;
+    width: 20%;
+}
+.hint-alma{
+    height: 50px;
+    width: 20%;
+}
+
 
 .middleworkspace {
     background-color: rgb(49, 51, 53);

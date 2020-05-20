@@ -83,6 +83,25 @@ window.onload = () => {
     }
 };
 
+//Hint için Pop-up
+var hintpopup = document.getElementById("hintpopup");
+var hint_al = document.getElementById("hint-al");
+var hint_alma = document.getElementById("hint-alma");
+btnHint.onclick = function() {
+    hintpopup.style.display = "block";
+}
+hint_al.onclick = function() {
+    //hmm..
+}
+hint_alma.onclick = function() {
+    hintpopup.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == hintpopup) {
+      hintpopup.style.display = "none";
+    }
+} 
+
 //Tutorialler için gereken verileri çeken API işlemleri
 function getLevels() {
     xhrContent.open('GET', contentApi + selectedLanguage, true);
