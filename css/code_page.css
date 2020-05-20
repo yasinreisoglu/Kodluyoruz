@@ -124,6 +124,9 @@ body {
 
 .hint-content {
     display: grid;
+    position: fixed;
+    right: 10%;
+    bottom: 0%;
     margin: 5% auto;
     padding: 20px;
     border: 1px solid black;
