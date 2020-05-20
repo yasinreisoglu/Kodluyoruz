@@ -87,7 +87,7 @@ body {
 
 .hintbutton {
     cursor: pointer;
-    visibility: visible;
+    visibility: hidden;
     color: white;
     background-color: #105c48;
     align-self: flex-end;
@@ -121,6 +121,7 @@ body {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
+
 .hint-content {
     display: grid;
     margin: 5% auto;
@@ -133,33 +134,38 @@ body {
     grid-template-columns: auto auto auto;
     background: #105c48c2;
 }
-.hint-mesaj{
+
+.hint-mesaj {
     font-family: 'Roboto', sans-serif;
     grid-column-start: 1;
     grid-column-end: 3;
     text-align: center;
     font-size: 25px;
-    color:whitesmoke;
+    color: whitesmoke;
 }
+
 .hint-al {
     height: 50px;
     width: 50px;
     grid-row-start: 5;
     margin-left: 25px;
 }
+
 .hint-alma {
     height: 50px;
     width: 150px;
     grid-row-start: 5;
     justify-self: right;
 }
-.hintcvpcss{
+
+.hintcvpcss {
     background: white;
     border: none;
     border-radius: 5px;
     transition-duration: 0.4s;
 }
-.hintcvpcss:hover{
+
+.hintcvpcss:hover {
     border: solid white 2px;
     background-color: #105c48;
     color: white;

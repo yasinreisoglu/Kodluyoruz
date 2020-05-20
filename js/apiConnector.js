@@ -101,14 +101,9 @@ window.onload = () => {
 btnHint.onclick = function() {
     hintpopup.style.display = "block";
 }
-hint_al.onclick = function() {
-    //hmm..
-}
-hint_alma.onclick = function() {
-    hintpopup.style.display = "none";
-}
+
 window.onclick = function(event) {
-    if (event.target == hintpopup) {
+    if (event.target == this.hintpopup) {
         hintpopup.style.display = "none";
     }
 }
