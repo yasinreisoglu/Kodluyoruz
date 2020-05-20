@@ -8,6 +8,12 @@ var header = document.getElementById("header");
 var btnHint = document.getElementById("hintbutton");
 var logo = document.getElementById("logo");
 var bilgialanı = document.getElementById("bilgialanı");
+var hintpopup = document.getElementById("hintpopup");
+var btnHintOk = document.getElementById("hint-al");
+var btnHintCancel = document.getElementById("hint-alma");
+
+
+
 //API'ler için Url'ler 
 var compilerAPI = 'https://api.jdoodle.com/v1/execute';
 var proxy = 'https://cors-anywhere.herokuapp.com/';
@@ -60,9 +66,16 @@ btnBack.onclick = () => {
         clearPage();
     }
 }
-btnHint.onclick = () => {
+btnHintOk.onclick = () => {
     editor.setValue(contentJson.levels.level[currentLevel].code);
+    btnHint.style.visibility = "hidden";
+    hintpopup.style.display = "none";
 }
+btnHintCancel.onclick = () => { hintpopup.style.display = "none"; }
+
+
+
+
 window.onload = () => {
     getLevels();
     if (!levelStatus) {
@@ -84,9 +97,7 @@ window.onload = () => {
 };
 
 //Hint için Pop-up
-var hintpopup = document.getElementById("hintpopup");
-var hint_al = document.getElementById("hint-al");
-var hint_alma = document.getElementById("hint-alma");
+
 btnHint.onclick = function() {
     hintpopup.style.display = "block";
 }
@@ -98,9 +109,9 @@ hint_alma.onclick = function() {
 }
 window.onclick = function(event) {
     if (event.target == hintpopup) {
-      hintpopup.style.display = "none";
+        hintpopup.style.display = "none";
     }
-} 
+}
 
 //Tutorialler için gereken verileri çeken API işlemleri
 function getLevels() {
