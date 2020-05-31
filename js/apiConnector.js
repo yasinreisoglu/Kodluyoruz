@@ -34,7 +34,11 @@ var value;
 var levelStatus = false;
 var selectedLanguage = localStorage.getItem("selectedLanguage");
 
-
+var languages = {
+    "python": "python3",
+    "c": "c",
+    "java": "java",
+}
 
 btnRun.onclick = () => {
     compilerApi();
@@ -68,7 +72,6 @@ btnBack.onclick = () => {
 }
 btnHintOk.onclick = () => {
     editor.setValue(contentJson.levels.level[currentLevel].code);
-    compilerApi();
     btnHint.style.visibility = "hidden";
     hintpopup.style.display = "none";
 }
@@ -146,7 +149,7 @@ function compilerApi() {
         "clientId": "b82ecbc8597c915d6457172b1a5e4726",
         "clientSecret": "4b23f21be5921030cc3d8339f56c7e1e80832675fa73406bc4ef429461e9b61a",
         "script": value,
-        "language": "python3",
+        "language": languages[selectedLanguage],
         "versionIndex": "0"
     });
     xhr.send(data);
