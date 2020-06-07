@@ -1,70 +1,128 @@
 //Elementler
-var div = document.getElementById("rightWorkspace");
-var btnRun = document.getElementById("sendApi");
-var courseDiv = document.getElementById("leftWorkspace");
-var btnNext = document.getElementById("nextButton");
-var btnBack = document.getElementById("backButton");
-var header = document.getElementById("header");
+const div = document.getElementById("rightWorkspace");
+const btnRun = document.getElementById("sendApi");
+const courseDiv = document.getElementById("leftWorkspace");
+const btnNext = document.getElementById("nextButton");
+const btnBack = document.getElementById("backButton");
+const header = document.getElementById("header");
+const btnHint = document.getElementById("hintbutton");
+const logo = document.getElementById("logo");
+const bilgialanı = document.getElementById("bilgialanı");
+const hintpopup = document.getElementById("hintpopup");
+const btnHintOk = document.getElementById("hint-al");
+const btnHintCancel = document.getElementById("hint-alma");
+
 
 
 //API'ler için Url'ler 
-var compilerAPI = 'https://api.jdoodle.com/v1/execute';
-var proxy = 'https://cors-anywhere.herokuapp.com/';
-var contentUrl = "http://demo3878722.mockable.io/";
+const compilerAPI = 'https://api.jdoodle.com/v1/execute';
+const proxy = 'https://cors-anywhere.herokuapp.com/';
+const contentAPI = "http://demo3878722.mockable.io/"
+
+
 //API nesneleri
 const xhrContent = new XMLHttpRequest();
 const xhr = new XMLHttpRequest();
 
 
 //Variables
-let currentLevel = 1;
+let currentLevel = 0;
+let hintCounter = 0;
 var responseJson;
 var contentJson;
 var value;
 var levelStatus = false;
 var selectedLanguage = localStorage.getItem("selectedLanguage");
 
+var languages = {
+    "python": "python3",
+    "c": "c",
+    "java": "java",
+}
 
 btnRun.onclick = () => {
     compilerApi();
+
 };
 btnNext.onclick = () => {
-    if (levelStatus) {
-        currentLevel++;
-        getLevels();
-        levelStatus = false;
-        clearPage();
-        if (!levelStatus) {
-            btnNext.classList.add('bdisabled');
+    if (currentLevel + 1 < contentJson.levels.level.length) {
+        if (levelStatus) {
+            currentLevel++;
+            getLevels();
+            levelStatus = false;
+            clearPage();
+            if (!levelStatus) {
+                btnNext.classList.add('bdisabled');
+            }
         }
+    } else {
+        bilgialanı.style.display = "none";
+        clearPage();
+        header.innerHTML = "TEBRİKLER";
+        editor.setValue("Bütün python kurslarını başarıyla tamamladınız!!!");
     }
+
 };
 btnBack.onclick = () => {
-    if (currentLevel > 1) {
+    if (currentLevel > 0) {
         currentLevel--;
         getLevels();
         clearPage();
     }
 }
+btnHintOk.onclick = () => {
+    editor.setValue(contentJson.levels.level[currentLevel].code);
+    btnHint.style.visibility = "hidden";
+    hintpopup.style.display = "none";
+}
+btnHintCancel.onclick = () => { hintpopup.style.display = "none"; }
+
+
+
 
 window.onload = () => {
     getLevels();
     if (!levelStatus) {
         btnNext.classList.add('bdisabled');
     }
+    switch (selectedLanguage) {
+        case "python":
+            logo.src = "images/Logo/Kodluyoruz-Logo-Python.png"
+            break;
+        case "java":
+            logo.src = "images/Logo/Kodluyoruz-Logo-Java.png"
+
+            break;
+        case "c":
+            logo.src = "images/Logo/Kodluyoruz-Logo-C.png"
+
+            break;
+    }
 };
+
+//Hint için Pop-up
+
+btnHint.onclick = function() {
+    hintpopup.style.display = "block";
+}
+
+window.onclick = function(event) {
+    if (event.target == this.hintpopup) {
+        hintpopup.style.display = "none";
+    }
+}
 
 //Tutorialler için gereken verileri çeken API işlemleri
 function getLevels() {
-    xhrContent.open('GET', contentUrl + selectedLanguage + "/level" + currentLevel, true);
+    xhrContent.open('GET', contentAPI + selectedLanguage, true);
     xhrContent.send();
     xhrContent.onload = () => {
         contentJson = JSON.parse(xhrContent.responseText);
-        courseDiv.innerHTML = contentJson.course + contentJson.tutorial;
-        header.innerHTML = contentJson.header.toUpperCase();
-        editor.setValue(contentJson.precode);
+        header.innerHTML = contentJson.levels.level[currentLevel].header;
+        courseDiv.innerHTML = contentJson.levels.level[currentLevel].course + contentJson.levels.level[currentLevel].tutorial;
+        editor.setValue(contentJson.levels.level[currentLevel].precode);
     };
-    if (currentLevel <= 1) {
+    if (currentLevel <= 0) {
         btnBack.classList.add('bdisabled');
     } else {
         btnBack.classList.remove('bdisabled');
@@ -73,9 +131,12 @@ function getLevels() {
 }
 //level geçildiğinde sayfa contentlerini temizleyen function
 function clearPage() {
+    header.innerHTML = "";
     courseDiv.innerHTML = "";
     div.innerHTML = "";
     editor.setValue("");
+    hintCounter = 0;
+    btnHint.style.visibility = "hidden";
 }
 
 //Compiler apisi için gereken POST işlemleri.
@@ -88,7 +149,7 @@ function compilerApi() {
         "clientId": "b82ecbc8597c915d6457172b1a5e4726",
         "clientSecret": "4b23f21be5921030cc3d8339f56c7e1e80832675fa73406bc4ef429461e9b61a",
         "script": value,
-        "language": "python3",
+        "language": languages[selectedLanguage],
         "versionIndex": "0"
     });
     xhr.send(data);
@@ -100,13 +161,17 @@ function compilerApi() {
         div.innerHTML = responseJson.output;
 
         var lowerRes = responseJson.output.toLowerCase();
-        var lowerAns = contentJson.answer.toLowerCase();
+        var lowerAns = contentJson.levels.level[currentLevel].answer.toLowerCase();
         if (lowerRes == lowerAns) {
             console.log("Done.");
             levelStatus = true;
             btnNext.classList.remove('bdisabled');
         } else {
             console.log("Error");
+            hintCounter++;
+            if (hintCounter > 1) {
+                btnHint.style.visibility = "visible";
+            }
         }
     }
 }

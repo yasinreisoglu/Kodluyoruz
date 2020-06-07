@@ -4,14 +4,16 @@
     <!-- CodeMirror -->
     <script src="js/codemirror-5.52.2/lib/codemirror.js" type="text/javascript"></script>
     <script src="js/codemirror-5.52.2/mode/javascript/javascript.js" type="text/javascript"></script>
+    <script src="js/codemirror-5.52.2/mode/python/python.js" type="text/javascript"></script>
     <script src="js/codemirror-5.52.2/mode/css/css.js"></script>
     <link rel="stylesheet" href="js/codemirror-5.52.2/lib/codemirror.css">
     <link rel="stylesheet" href="js/codemirror-5.52.2/theme/moxer.css" rel="stylesheet">
     <link href="js/codemirror-5.52.2/theme/darcula.css" rel="stylesheet">
+    <link href="js/codemirror-5.52.2/theme/tomorrow-night-bright.css" rel="stylesheet">
+
     <!---------------------------------------------------------->
 
     <link rel="stylesheet" href="css/code_page.css">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Kodlamaya Devam!</title>
 
 </head>
@@ -22,7 +24,7 @@
         <div class="left">
             <div style="padding-top: 2px;padding-left: 20px;">
                 <div>
-                    <img src="images/Kodluyoruz-Logo.png" style="width: 180px;height: 45px;" onclick="window.location.href='index.html'">
+                    <img src="images\Logo\Kodluyoruz-Logo-2.png" class="logo" id="logo" onclick="window.location.href='index.html'">
                 </div>
             </div>
         </div>
@@ -40,7 +42,7 @@
     <!--WORKSPACE-->
     <div class="workspace">
         <div class="left leftworkspace">
-            <div class="bilgialanı">
+            <div class="bilgialanı" id="bilgialanı">
                 <img src="images/bilgi-alanı.png" style="height: 3.5vh;width: 3.5vh;">
                 <span>Bilgi Alanı</span>
                 <img src="images/bilgi-alanı.png" style="height: 3.5vh;width: 3.5vh;">
@@ -48,6 +50,7 @@
             <div id="leftWorkspace" style="white-space: pre-line;">
 
             </div>
+
         </div>
         <div class="middle middleworkspace">
             <div style="height: 100%;">
@@ -73,8 +76,25 @@
             <div style="float: left;margin-left: 5%;">
                 <button id="nextButton" class="footerbutton">İleri</button>
             </div>
+            <button class="hintbutton" id="hintbutton">
+                <span style="margin-bottom: 15px;">Yardım</span>
+            </button>
+
         </div>
         <div class="right"></div>
+
+        <!-- Hint Pop-up-->
+        <div class="hintpopup" id="hintpopup">
+            <div class="hint-content">
+                <span class="hint-mesaj">Kodu görmek istiyor musun?</span>
+                <button class="hint-al hintcvpcss" id="hint-al">
+                    Evet
+                </button>
+                <button class="hint-alma hintcvpcss" id="hint-alma">
+                    Hayır denemeye devam edeceğim.
+                </button>
+            </div>
+        </div>
     </div>
 
     <script src="js/apiConnector.js" type="text/javascript"></script>

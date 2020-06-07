@@ -2,29 +2,31 @@
 
 <head>
     <title>Kodluyoruz'a Hoşgeldin.</title>
-    <link rel="stylesheet" href="css/main_page.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-    <div class="ortabolge">
-        <img src="images/Kodluyoruz-Logo.png" style="width: 1200px;height: 325px;">
-        <div class="kodkutulari">
-            <button id="btnPython" class="kutu pythonbutton">
-                <img src="images/python-icon.png">
+    <section>
+        <div class="ortabolge">
+            <img src="images/Logo/Kodluyoruz-Logo-2.png" class="logo" id="logo">
+            <div class="kodkutulari">
+                <button id="btnPython" class="kutu pythonbutton">
+                <img id="imgPython" onmouseover="setColorized('Python')" onmouseout="setWhite('Python')" src="images/iconlar/python-2.png">
             </button>
-            <button id="btnC" class="kutu cbutton kutumesafe">
-                <img src="images/c-icon.png">
+                <button id="btnC" class="kutu cbutton kutumesafe">
+                <img id="imgC" onmouseover="setColorized('C')" onmouseout="setWhite('C')" src="images/iconlar/C-2.png">
             </button>
-            <button id="btnJava" class="kutu javabutton kutumesafe">
-                <img src="images/java-icon.png">
+                <button id="btnJava" class="kutu javabutton kutumesafe">
+                <img id="imgJava" onmouseover="setColorized('Java')" onmouseout="setWhite('Java')" src="images/iconlar/java-2.png">
             </button>
-        </div>
+            </div>
 
-        <span class="dilsecin">
-            Öğrenmek istediğiniz Dili seçin.
+            <span class="dilsecin">
+            ÖĞRENMEK İSTEDİĞİNİZ DİLİ SEÇİNİZ
         </span>
-    </div>
-    <script src="js/pageRouter.js" type="text/javascript"></script>
+        </div>
+        <script src="js/pageRouter.js" type="text/javascript"></script>
+    </section>
 </body>
 
 </html>
