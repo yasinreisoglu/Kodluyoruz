@@ -87,7 +87,7 @@ body {
 
 .hintbutton {
     cursor: pointer;
-    visibility: visible;
+    visibility: hidden;
     color: white;
     background-color: #105c48;
     align-self: flex-end;
