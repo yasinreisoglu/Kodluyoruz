@@ -2,7 +2,7 @@
 ---
 - Bu proje dönem sonu ödevi için yapılmıştır.
 - Amacı kod bilgisi olamayan veya düşük seviyede olan kişilerin kendilerini geliştirmesidir.
-- Proje 3 dil öğretmeyi amaçlamıştır. Bunlar C, Java, Python'
+- Proje 3 dil öğretmeyi amaçlamıştır. Bunlar C, Java, Python'dır.
 
 ---
 
