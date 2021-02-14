@@ -1,16 +1,12 @@
 # KODLUYORUZ 
----
-- Bu proje dönem sonu ödevi için yapılmıştır.
-- Amacı kod bilgisi olamayan veya düşük seviyede olan kişilerin kendilerini geliştirmesidir.
-- Proje 3 dil öğretmeyi amaçlamıştır. Bunlar C, Java, Python'dır.
 
 ---
 
-- Kullanılan teknolojiler şunlardır;
-- Sitenin ana düzen ve arkaplan işlemleri için HTML CSS JS.
-- Kod derlemek için ise jdoodle'ın sağladığı ücretsiz API kaynağını kullandık.
-
-
+- This application created for term project.
+- The goal is 
+- The goal is for people who do not have code knowledge or have a low level to improve themselves.
+- The project intends to teach three languages. These are C, Java, Python.
 
 ---
-##### Yasin Reisoglu ve Mehmet Oğuz Ekşi tarafından hazırlandı - Mayıs 2020.
+
+##### Created by Yasin Reisoglu & Mehmet Oğuz Ekşi - May 2020.
